@@ -1,27 +1,11 @@
 ---
 import MySiteLayout from "../layouts/MySiteLayout.astro";
-import AddTodo from "../components/AddTodo.astro";
-import TodoList from "../components/TodoList.astro";
+
+import { ReactContainer } from "../components/react/ReactContainer";
 
 const title = "TODO List";
-
-const todoList = ["todo one", "todo two", "todo three", "todo four"];
 ---
 
 <MySiteLayout title={title}>
-  <div class="todo-container">
-    <AddTodo todoList={todoList} />
-
-    <TodoList todoList={todoList} />
-  </div>
+  <ReactContainer client:load />
 </MySiteLayout>
-
-<style lang="scss">
-  .todo-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-</style>

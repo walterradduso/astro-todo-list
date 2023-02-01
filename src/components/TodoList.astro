@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon";
+
 const { todoList } = Astro.props;
 ---
 
@@ -9,8 +11,14 @@ const { todoList } = Astro.props;
     {
       todoList.map((list: string) => (
         <div class="task">
-          <input type="checkbox" />
-          <span>{list}</span>
+          <div class="task-content">
+            <input type="checkbox" />
+            <span class="task-name">{list}</span>
+          </div>
+
+          <button class="delete-task-button">
+            <Icon class="task-icon" pack="mdi" name="delete-outline" />
+          </button>
         </div>
       ))
     }
@@ -20,22 +28,57 @@ const { todoList } = Astro.props;
 <style lang="scss">
   .todo-list-container {
     align-items: center;
-    border-radius: 4px;
+    border: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
     width: 500px;
-    background-color: #eee;
-    border: 1px solid #999;
 
     h4 {
+      color: #fff;
       margin: 0;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
     }
 
     .todo-list {
+      background-color: #423a6f;
+      border-radius: 0.25rem;
+      color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
       list-style: none;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .todo-list .task {
+      align-items: center;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .task .task-content {
+      align-items: center;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .task .delete-task-button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      padding: 0;
+    }
+
+    .task .task-icon {
+      width: 30px;
     }
   }
 </style>
