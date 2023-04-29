@@ -1,3 +1,1 @@
-import DeleteBin from './DeleteBin';
-
-export { DeleteBin };
+export { default as DeleteBin } from './DeleteBin';

@@ -1,3 +1,1 @@
-import ReactContainer from './ReactContainer';
-
-export { ReactContainer };
+export { default as ReactContainer } from './ReactContainer';
