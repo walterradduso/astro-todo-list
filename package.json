@@ -4,11 +4,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build --base=/astro-todo-list/",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
