@@ -51,7 +51,7 @@ Organízate y haz un seguimiento de tus tareas diarias con esta lista de tareas 
 #### Node Version
 
 ```
-v18.13.0.
+v18.16.0.
 ```
 
 ---
